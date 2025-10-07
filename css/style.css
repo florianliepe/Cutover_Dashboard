@@ -1,0 +1,153 @@
+/* 1. Global Styles & Variables */
+:root {
+    --bg-color: #f8f9fa;
+    --header-bg: #212529;
+    --card-bg: #ffffff;
+    --text-color: #495057;
+    --heading-color: #212529;
+    --accent-color: #0d6efd;
+    --border-color: #dee2e6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    /* Status Colors for the New Dashboard */
+    --color-completed: #198754; /* Green */
+    --color-inprogress: #ffc107; /* Yellow */
+    --color-open: #dc3545; /* Red */
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin-top: 60px; /* Offset for fixed navbar */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+/* 2. Upload Page (index.html) */
+.upload-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s, background-color 0.2s;
+    cursor: pointer;
+}
+
+.upload-area.dragover {
+    border-color: var(--accent-color);
+    background-color: #e9ecef;
+}
+
+.upload-area i {
+    font-size: 4rem;
+    color: var(--accent-color);
+}
+
+.upload-area p {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.expected-format {
+    text-align: left;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.expected-format h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.expected-format ul {
+    padding-left: 20px;
+    list-style: none;
+    margin: 0;
+}
+
+.expected-format li {
+    margin-bottom: 0.5rem;
+}
+
+.status-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    display: none; /* Hidden by default */
+}
+
+.status-message:not(:empty) {
+    display: block; /* Show only when it has content */
+}
+
+.status-error {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+.status-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+/* 3. Dashboard Page Styles */
+.card-summary .card-body {
+    padding: 1.25rem;
+}
+.card-summary h4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.card-summary h5 {
+    color: #6c757d;
+}
+
+/* Card Color Variants */
+.card.card-total { border-left: 5px solid var(--accent-color); }
+.card.card-completed { border-left: 5px solid var(--color-completed); }
+.card.card-open { border-left: 5px solid var(--color-open); }
+.card.card-inprogress { border-left: 5px solid var(--color-inprogress); }
+
+/* Table hover effect */
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Make table text slightly smaller to fit more content */
+.table td, .table th {
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+}
